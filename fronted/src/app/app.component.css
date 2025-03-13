@@ -1,0 +1,347 @@
+/* Base styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #111827;
+    --bg-card: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent-blue: #3b82f6;
+    --accent-purple: #6366f1;
+    --accent-green: #10b981;
+    --accent-yellow: #f59e0b;
+    --border-color: #374151;
+    --header-height: 60px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+nav ul li.active a {
+    color: var(--text-primary);
+}
+
+nav ul li a:hover {
+    color: var(--text-primary);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    margin-right: 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.new-task-btn {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.new-task-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* Task columns */
+.task-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.task-column {
+    background-color: transparent;
+}
+
+.column-title {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.task-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.task-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.task-tag.in-progress {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: var(--accent-yellow);
+}
+
+.task-tag.completed {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+}
+
+.task-status-icon {
+    color: var(--text-secondary);
+}
+
+.task-status-icon.completed {
+    color: var(--accent-green);
+}
+
+.task-options {
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+/* Activity section */
+.activity-section {
+    margin-top: 2rem;
+}
+
+.activity-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.activity-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.activity-card, .mood-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.activity-header, .mood-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.add-btn, .edit-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activity-icon {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--accent-blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-details h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.activity-details p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Mood options */
+.mood-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mood-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mood-emoji {
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mood-emoji:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mood-option span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .task-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .activity-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .mood-options {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav ul {
+        margin-top: 0.5rem;
+    }
+    
+    .header-content {
+        padding: 1rem 0;
+    }
+    
+    header {
+        height: auto;
+    }
+}
