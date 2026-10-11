@@ -13,7 +13,9 @@ def read_root():
     return {"message": "¡API de Growth funcionando!"}
 
 # Ejemplo de ruta para ver si la DB está viva
+#Example route to check if the database is alive
 @app.get("/routines/")
 def get_routines(db: Session = Depends(get_db)):
+
     #Here will be the logic to query routines. For now, we return something static.
     return {"status": "ok", "routines": []}

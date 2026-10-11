@@ -18,3 +18,6 @@ __pycache__/
 
 # Cosas de Mac (si estás en Mac)
 .DS_Store
+
+#
+*.growth.db
